@@ -23,7 +23,19 @@
   <link rel="preload" href="../assets/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/img/art/fladen.svg" as="image">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <script>document.documentElement.classList.add("js")</script>
+  <script>
+    /* Intro einmal pro Sitzung zeigen (mit ?intro=1 erzwingen), nie bei «Bewegung reduzieren» */
+    (function (h) {
+      h.classList.add("js");
+      try {
+        var force = /[?&]intro=1/.test(location.search);
+        if ((force || !sessionStorage.getItem("alpascha-intro")) && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          h.classList.add("show-intro");
+          sessionStorage.setItem("alpascha-intro", "1");
+        }
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
   <!-- TODO vor Livegang: "geo" (latitude/longitude) ergänzen, sobald die Koordinaten des Standorts bestätigt sind -->
   <script type="application/ld+json">
   {
@@ -99,12 +111,24 @@
   <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
 </svg>
 
+<!-- Intro: Logo «geht auf» wie ein Teig, danach hebt sich der Vorhang -->
+<div class="intro" aria-hidden="true">
+  <div class="intro__glow"></div>
+  <div class="intro__stage">
+    <svg class="intro__steam" viewBox="0 0 160 110"><path style="--s:0" d="M45 110c-14-22 14-38 4-60s12-36 0-50"/><path style="--s:1" d="M82 110c14-22-14-38-4-60s-12-36 0-50"/><path style="--s:2" d="M118 110c-14-22 14-38 4-60s12-36 0-50"/></svg>
+    <div class="intro__logo"><img src="../assets/img/logo.svg" alt="" width="200" height="200"></div>
+    <p class="intro__name">alpascha</p>
+    <p class="intro__tag"><span>Bäckerei</span><span>·</span><span>Aesch</span><span>·</span><span>seit 2014</span></p>
+    <span class="intro__bar"><i></i></span>
+  </div>
+</div>
+
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <header class="site-header is-top">
   <div class="container site-header__inner">
     <a class="brand" href="./" aria-label="Bäckerei alpascha – Startseite">
-      <img src="../assets/img/logo-mark.svg" alt="" width="42" height="42">
+      <img src="../assets/img/logo.svg" alt="" width="42" height="42">
       <span class="brand__text"><span class="brand__name">alpascha</span><span class="brand__sub">Bäckerei · Aesch</span></span>
     </a>
 
@@ -603,7 +627,7 @@
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="brand" href="./">
-          <img src="../assets/img/logo-mark.svg" alt="" width="42" height="42">
+          <img src="../assets/img/logo.svg" alt="" width="42" height="42">
           <span class="brand__text"><span class="brand__name">alpascha</span><span class="brand__sub">Bäckerei · Aesch</span></span>
         </a>
         <p>Arabisches Fladenbrot, täglich frisch aus Aesch – seit 2014.</p>

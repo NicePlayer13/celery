@@ -48,6 +48,15 @@ Alles in `assets/js/site-config.js`:
   eigenen Hosting). Solange das Feld leer ist, läuft das Formular im **Konzept-Modus**: Die Eingaben werden geprüft und
   die Erfolgsmeldung erscheint, aber es werden **keine Daten gesendet**.
 
+## Logo & Intro
+
+- Das Logo liegt an **einer** Stelle: `assets/img/logo.svg` (Header, Footer, Intro, Favicon-Vorlage).
+  Im Konzept ist dort ein neutraler Entwurf. Das echte Logo einfach unter diesem Namen ablegen (SVG bevorzugt,
+  PNG geht auch – dann die Endung in den HTML-Dateien anpassen).
+- Enthält das echte Logo bereits den Schriftzug «alpascha», im Intro die Zeile `<p class="intro__name">` entfernen.
+- Das Intro läuft **einmal pro Browser-Sitzung** (ca. 3 s, Klick oder Taste überspringt), nie bei «Bewegung reduzieren».
+  Für Präsentationen mit `?intro=1` erzwingen, z. B. `/de/?intro=1`.
+
 ## Fotos einsetzen
 
 Jedes Bild steht in einem `<figure class="media wipe">` (die Klasse `wipe` sorgt für den Aufzieh-Effekt).

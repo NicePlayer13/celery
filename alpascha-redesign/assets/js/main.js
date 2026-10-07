@@ -58,9 +58,33 @@
 
   /* ---------- Hero-Auftritt: sobald Schriften bereit sind ---------- */
   function loaded() { document.body.classList.add("is-loaded"); }
-  if (document.fonts && document.fonts.ready) {
-    Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 900); })]).then(loaded);
-  } else { loaded(); }
+  function startHero() {
+    if (document.fonts && document.fonts.ready) {
+      Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 900); })]).then(loaded);
+    } else { loaded(); }
+  }
+
+  /* ---------- Intro: danach startet der Hero-Auftritt ---------- */
+  var html = document.documentElement;
+  var intro = $(".intro");
+  if (intro && html.classList.contains("show-intro")) {
+    var ended = false;
+    var endIntro = function () {
+      if (ended) return;
+      ended = true;
+      html.classList.remove("show-intro");
+      intro.remove();
+      loaded();
+    };
+    var skip = function () { intro.classList.add("is-skip"); };
+    intro.addEventListener("animationend", function (e) { if (e.target === intro && e.animationName === "intro-out") endIntro(); });
+    intro.addEventListener("click", skip);
+    document.addEventListener("keydown", skip, { once: true });
+    setTimeout(endIntro, 5000); // Sicherheitsnetz
+  } else {
+    if (intro) intro.remove();
+    startHero();
+  }
 
   /* ---------- Navigation ---------- */
   var header = $(".site-header");
