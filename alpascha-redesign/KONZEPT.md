@@ -16,14 +16,23 @@ What do they have? How do I start?* Every layout decision serves those three que
 | **Products as large picture cards, flatbread first and twice the size of the others** | Flatbread is the main product and the reason customers come back, so it gets the largest card. Each card has an "Anfragen" button that **pre-ticks that product in the form** and scrolls there, which saves a step. |
 | **"So werden Sie Kunde" in 3 steps + conditions box** (area, days, minimum order, prices) | The steps explain how to become a customer, which the current site never does. The conditions box shows the possible deal-breakers up front, so fewer requests go nowhere. |
 | **Short form**: 6 required fields, products as tap-friendly checkboxes, quantity is a free estimate | Enough information to prepare an offer without scaring off a busy owner. Errors are shown per field, with an error summary and focus on the first invalid field. |
-| **Trust section uses only real facts + slots for real photos** (bakery, oven, delivery van, team) | Real photos of the bakery build more trust than any stock image. The illustrated placeholders show where each photo goes and what it should show. |
+| **Trust section uses only real facts + slots for real photos** (bakery, oven, delivery van, team) | Real photos of the bakery build more trust than any stock image. The illustrations and "Foto folgt" frames show where each photo goes and what it should show. The hero scene can later become a short looping video of the oven. |
 | **Jobs are data, not layout** | The owner (or agency) edits one list in `site-config.js`. When the list is empty, the site honestly says that there are currently no open positions. |
 
-### Visual language
-- **Colours:** wheat/sand backgrounds (`#FBF6EE`, `#F3E8D6`), deep warm brown text (`#2B1D14`, 15:1 contrast), and **one** fresh herb green for all actions (`#2D6A4F`, 6.4:1 with white text). Crust gold is used only for decoration and icons.
-- **Type:** *Readex Pro* has Latin and Arabic designed as one family, so DE and AR look like the same brand. It is self-hosted (no Google request) and one variable file per script covers all weights. Body text is 17 px (Arabic 18 px with more line height), so it is readable on phones.
-- **Motion:** only a soft fade/rise when sections scroll into view. It is fully disabled with `prefers-reduced-motion`.
-- **RTL:** the Arabic version is the same markup with `dir="rtl"`. All spacing uses logical CSS properties, so the layout mirrors automatically. Arrows flip, and phone numbers, emails and addresses stay LTR.
+### Visual language: «Ofenwarm»
+The idea: the site should feel like standing in front of the oven, warm, tactile and alive, not like a template.
+- **Colours:** a deep oven brown (`#1C120B`) for the hero, the B2B section and the footer. Flour/wheat tones (`#F6EEE1`) for reading sections. Crust gold (`#D9A15E`) for light and highlights. **One** fresh herb green (`#2D6A4F`) is used only for actions, so every green element is something to click.
+- **Type:** *Fraunces*, a warm, slightly quirky serif, for German headlines, with one word per headline set in italic gold. *Reem Kufi*, a Kufi display face, for Arabic headlines. *Readex Pro* for all body text in both scripts. All three are self-hosted.
+- **Texture instead of clip art:** the bread, food and oven illustrations are drawn with SVG lighting filters (real surface texture, blisters, flour). Paper grain covers the whole page, and section edges are cut in a wavy "crust" shape. Photo spots without an illustration show an honest "Foto folgt" frame.
+- **Motion** (all disabled when the device asks for reduced motion):
+  - **Hero:** the headline rises line by line, six flatbreads drop onto the stack one after another, and steam rises. Sparks drift up, a "Seit 2014" seal rotates, the oven glow slowly breathes, and on desktop a warm light follows the mouse while the bread scene tilts slightly.
+  - **Two crossed ticker tapes** ("Täglich frisch gebacken ✺ Seit 2014 in Aesch …", "Für Läden ✺ Restaurants …").
+  - **Products:** images are "pulled up" from the bottom as they come into view. Cards tilt towards the mouse, and the main flatbread slowly turns (faster on hover).
+  - **"So werden Sie Kunde":** a gold line draws itself as you scroll and lights up step 1, then 2, then 3.
+  - **Bread history:** the history sentence turns from faint to full ink, word by word, as you scroll.
+  - **Header:** it is transparent over the hero, turns solid on scroll, hides while scrolling down and returns when scrolling up. A thin gold progress line shows how far down the page you are.
+  - **Small touches:** buttons are "magnetic" and a light edge sweeps across them on hover. The phone menu is full-screen with large headings sliding in. In the form, the field shakes on an error and the checkmark draws itself on success.
+- **RTL:** the Arabic version is the same markup with `dir="rtl"`. All spacing uses logical CSS properties, so the layout mirrors automatically. Arrows, progress lines and the step line run right-to-left, and phone numbers, emails and addresses stay LTR.
 
 ### SEO
 - Unique `<title>`/description per page and language, `hreflang` de/ar/x-default, canonical URLs, `sitemap.xml` with alternates, `robots.txt`.
@@ -35,7 +44,7 @@ What do they have? How do I start?* Every layout decision serves those three que
 ### Privacy & quality
 - No cookies, no tracking, fonts self-hosted, **Google Map loads only after a click** (revDSG-friendly), honeypot spam protection instead of reCAPTCHA.
 - Tested in Chromium at 390 px and 1366 px, DE + AR: **0 axe-core WCAG 2 A/AA violations**, no horizontal scroll, no console errors, and the form flow (errors → preselect → success) checked.
-- About 60 KB transferred per page (gzip, including the font). No libraries.
+- About 100 KB for the first view, including three self-hosted font files and the bread graphics; product images load lazily. No libraries.
 
 ### Where the wording differs from the brief
 - The brief's example subline says "erste Fladenbrot-Bäckerei der Schweiz". The site says **"erste *industrielle* Fladenbrot-Bäckerei der Schweiz"**, because that is the claim on the current website.

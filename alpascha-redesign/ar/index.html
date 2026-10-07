@@ -20,6 +20,8 @@
   <!-- [og:image] ergänzen, sobald echtes Foto vorhanden (1200×630 JPG) -->
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/readex-pro-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/reem-kufi-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/img/art/fladen.svg" as="image">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script>document.documentElement.classList.add("js")</script>
   <!-- TODO vor Livegang: "geo" (latitude/longitude) ergänzen, sobald die Koordinaten des Standorts bestätigt sind -->
@@ -99,10 +101,10 @@
 
 <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
 
-<header class="site-header">
+<header class="site-header is-top">
   <div class="container site-header__inner">
     <a class="brand" href="./" aria-label="مخبز alpascha – الصفحة الرئيسية">
-      <img src="../assets/img/logo-mark.svg" alt="" width="40" height="40">
+      <img src="../assets/img/logo-mark.svg" alt="" width="42" height="42">
       <span class="brand__text"><span class="brand__name">alpascha</span><span class="brand__sub">مخبز · Aesch</span></span>
     </a>
 
@@ -123,7 +125,7 @@
       <a href="./" lang="ar" hreflang="ar" aria-current="true">العربية</a>
     </div>
 
-    <a class="btn btn--small header-cta" href="#anfrage">أرسل طلبك</a>
+    <a class="btn btn--small header-cta" href="#anfrage" data-magnetic>أرسل طلبك</a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <svg class="icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -131,6 +133,7 @@
       <span class="visually-hidden">القائمة</span>
     </button>
   </div>
+  <span class="scroll-progress" aria-hidden="true"></span>
 </header>
 
 <main id="main">
@@ -139,37 +142,84 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="container hero__grid">
       <div class="hero__text">
-        <p class="eyebrow reveal">مخبز alpascha · Aesch، بازل الريفية</p>
-        <h1 id="hero-title" class="reveal" data-delay="1">خبز عربي طازج، يُخبز كل يوم في سويسرا</h1>
-        <ul class="hero__sub reveal" data-delay="2" aria-label="باختصار">
+        <p class="label fade" style="--d:0"><b>alpascha</b> مخبز · Aesch، بازل الريفية</p>
+        <h1 id="hero-title">
+          <span class="line" style="--l:0"><span>خبز عربي</span></span>
+          <span class="line" style="--l:1"><span><em>طازج</em>، يُخبز كل يوم</span></span>
+          <span class="line" style="--l:2"><span>في سويسرا</span></span>
+        </h1>
+        <ul class="hero__facts fade" style="--d:1" aria-label="باختصار">
           <li>منذ 2014</li>
           <li>أول مخبز صناعي للخبز العربي في سويسرا</li>
           <li>توريد للمتاجر والمطاعم</li>
         </ul>
-        <p class="hero__lead reveal" data-delay="2">نخبز الخبز العربي طازجاً كل يوم في مخبزنا في Aesch، ونورّد إلى جانبه العديد من المواد الغذائية العربية – من الحمص والطحينة إلى الزيتون والأرز والبرغل.</p>
-        <div class="hero__actions reveal" data-delay="3">
-          <a class="btn" href="#anfrage">طلب للتجار والمطاعم <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn--secondary" href="#produkte">تصفّح المنتجات</a>
+        <p class="hero__lead fade" style="--d:2">نخبز الخبز العربي طازجاً كل يوم في مخبزنا في Aesch، ونورّد إلى جانبه العديد من المواد الغذائية العربية – من الحمص والطحينة إلى الزيتون والأرز والبرغل.</p>
+        <div class="hero__actions fade" style="--d:3">
+          <a class="btn" href="#anfrage" data-magnetic>طلب للتجار والمطاعم <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--light" href="#produkte" data-magnetic>تصفّح المنتجات</a>
         </div>
-        <p class="hero__call reveal" data-delay="3">تفضّلون الحديث مباشرة؟ اتصلوا بنا: <a href="tel:+41617516565" dir="ltr">061 751 65 65</a></p>
+        <p class="hero__call fade" style="--d:4">تفضّلون الحديث مباشرة؟ اتصلوا بنا: <a href="tel:+41617516565" dir="ltr">061 751 65 65</a></p>
       </div>
 
-      <figure class="media hero__media reveal">
-        <img src="../assets/img/ph/fladenbrot.svg" alt="كومة من أرغفة الخبز العربي الطازجة" width="800" height="800" fetchpriority="high">
-        <div class="hero__badge" aria-hidden="true"><small>منذ</small><strong>2014</strong></div>
-        <figcaption class="media__tag">[صورة: خبز طازج من المخبز]</figcaption>
-      </figure>
+      <div class="hero__visual" data-parallax="0.08">
+        <div class="scene" role="img" aria-label="رسم توضيحي: كومة من أرغفة الخبز العربي الطازجة يتصاعد منها البخار">
+          <div class="scene__float"><img src="../assets/img/art/fladen-top.svg" alt="" width="400" height="400"></div>
+          <svg class="scene__steam" viewBox="0 0 400 300" aria-hidden="true">
+            <path style="--s:0" d="M120 300c-24-40 26-70 6-110s22-70 0-110"/>
+            <path style="--s:1" d="M205 300c22-40-26-70-6-110s-22-70 0-110"/>
+            <path style="--s:2" d="M285 300c-24-40 26-70 6-110s22-70 0-110"/>
+          </svg>
+          <div class="scene__stack">
+            <img src="../assets/img/art/fladen.svg" alt="" width="600" height="200" style="--i:0;--r:1.5deg">
+            <img src="../assets/img/art/fladen-b.svg" alt="" width="600" height="200" style="--i:1;--r:-2deg">
+            <img src="../assets/img/art/fladen.svg" alt="" width="600" height="200" style="--i:2;--r:.5deg">
+            <img src="../assets/img/art/fladen-b.svg" alt="" width="600" height="200" style="--i:3;--r:2.5deg">
+            <img src="../assets/img/art/fladen.svg" alt="" width="600" height="200" style="--i:4;--r:-1.5deg">
+            <img src="../assets/img/art/fladen-b.svg" alt="" width="600" height="200" style="--i:5;--r:1deg">
+          </div>
+          <div class="scene__dust" aria-hidden="true">
+            <span style="--x:12%;--y:30%;--t:7s;--dl:0s;--dx:30px"></span>
+            <span style="--x:22%;--y:20%;--s:3px;--t:9s;--dl:1.5s;--dx:-20px"></span>
+            <span style="--x:35%;--y:45%;--t:6s;--dl:3s;--dx:15px"></span>
+            <span style="--x:48%;--y:25%;--s:5px;--t:8s;--dl:.8s;--dx:-35px"></span>
+            <span style="--x:58%;--y:40%;--s:3px;--t:7.5s;--dl:2.2s;--dx:25px"></span>
+            <span style="--x:68%;--y:18%;--t:10s;--dl:4s;--dx:-15px"></span>
+            <span style="--x:78%;--y:35%;--s:3px;--t:6.5s;--dl:1s;--dx:40px"></span>
+            <span style="--x:88%;--y:28%;--t:8.5s;--dl:3.5s;--dx:-25px"></span>
+            <span style="--x:28%;--y:55%;--s:2px;--t:7s;--dl:5s;--dx:10px"></span>
+            <span style="--x:72%;--y:52%;--s:2px;--t:9s;--dl:6s;--dx:-10px"></span>
+          </div>
+          <div class="badge-spin" aria-hidden="true">
+            <svg viewBox="0 0 150 150"><defs><path id="badge-circle" d="M75 75m-60 0a60 60 0 1 1 120 0a60 60 0 1 1-120 0"/></defs><text direction="ltr"><textPath href="#badge-circle">منذ 2014 · خبز عربي طازج كل يوم · Aesch ·</textPath></text></svg>
+            <strong>2014</strong>
+          </div>
+          <span class="media__tag">[صورة/فيديو: خبز طازج من الفرن]</span>
+        </div>
+      </div>
     </div>
+    <a class="scroll-cue" href="#produkte"><i></i>مرّر للأسفل</a>
   </section>
+
+  <!-- ================= LAUFBÄNDER ================= -->
+  <div class="tapes" aria-hidden="true">
+    <div class="tape tape--a"><div class="tape__track">
+      <span dir="rtl">خبز طازج كل يوم <i>✺</i> منذ 2014 في Aesch <i>✺</i> خبز عربي <i>✺</i> حمص · طحينة · زيتون <i>✺</i> أرز وبرغل <i>✺</i> توصيل خاص بنا <i>✺</i></span>
+      <span dir="rtl">خبز طازج كل يوم <i>✺</i> منذ 2014 في Aesch <i>✺</i> خبز عربي <i>✺</i> حمص · طحينة · زيتون <i>✺</i> أرز وبرغل <i>✺</i> توصيل خاص بنا <i>✺</i></span>
+    </div></div>
+    <div class="tape tape--b"><div class="tape__track">
+      <span dir="rtl">للمتاجر <i>✺</i> المطاعم <i>✺</i> الكباب والفلافل <i>✺</i> التموين <i>✺</i> اطلبوا الآن <i>✺</i> للمتاجر <i>✺</i> المطاعم <i>✺</i> الكباب والفلافل <i>✺</i> التموين <i>✺</i> اطلبوا الآن <i>✺</i></span>
+      <span dir="rtl">للمتاجر <i>✺</i> المطاعم <i>✺</i> الكباب والفلافل <i>✺</i> التموين <i>✺</i> اطلبوا الآن <i>✺</i> للمتاجر <i>✺</i> المطاعم <i>✺</i> الكباب والفلافل <i>✺</i> التموين <i>✺</i> اطلبوا الآن <i>✺</i></span>
+    </div></div>
+  </div>
 
   <!-- ================= FAKTEN ================= -->
   <section class="facts" aria-label="حقائق">
     <div class="container">
       <ul>
-        <li><svg aria-hidden="true"><use href="#i-calendar"/></svg><div><strong>منذ 2014</strong><span>في Aesch، بازل الريفية</span></div></li>
-        <li><svg aria-hidden="true"><use href="#i-sun"/></svg><div><strong>طازج يومياً</strong><span>نخبزه كل يوم</span></div></li>
-        <li><svg aria-hidden="true"><use href="#i-truck"/></svg><div><strong>توصيل خاص بنا</strong><span>بسائقينا</span></div></li>
-        <li><svg aria-hidden="true"><use href="#i-map"/></svg><div><strong><span class="ph">[منطقة التوصيل]</span></strong><span>أيام التوصيل: <span class="ph">[أيام التوصيل]</span></span></div></li>
+        <li class="reveal" style="--d:0"><strong>منذ 2014</strong><span>في Aesch، بازل الريفية</span></li>
+        <li class="reveal" style="--d:1"><strong>كل يوم</strong><span>خبز طازج من الفرن</span></li>
+        <li class="reveal" style="--d:2"><strong>توصيل خاص</strong><span>بسائقينا</span></li>
+        <li class="reveal" style="--d:3"><strong><span class="ph">[منطقة التوصيل]</span></strong><span>أيام التوصيل: <span class="ph">[أيام التوصيل]</span></span></li>
       </ul>
     </div>
   </section>
@@ -177,16 +227,19 @@
   <!-- ================= PRODUKTE ================= -->
   <section id="produkte" class="section" aria-labelledby="produkte-title">
     <div class="container">
-      <header class="section__head reveal">
-        <p class="eyebrow">منتجاتنا</p>
-        <h2 id="produkte-title">الخبز العربي والمنتجات العربية من مصدر واحد</h2>
-        <p>في قلب تشكيلتنا خبزنا العربي الطازج يومياً. وإلى جانبه نورّد العديد من المواد الغذائية العربية الأخرى – كل ذلك في طلبية واحدة.</p>
+      <header class="section__head section__head--split">
+        <div class="reveal">
+          <p class="label"><b>(01)</b> المنتجات</p>
+          <h2 id="produkte-title">الخبز العربي <em>والمنتجات العربية</em> من مصدر واحد</h2>
+        </div>
+        <p class="reveal" style="--d:1">في قلب تشكيلتنا خبزنا العربي الطازج يومياً. وإلى جانبه نورّد العديد من المواد الغذائية العربية الأخرى – كل ذلك في طلبية واحدة.</p>
       </header>
 
       <div class="products">
         <article class="product product--feature reveal">
-          <figure class="media">
-            <img src="../assets/img/ph/fladenbrot.svg" alt="أرغفة خبز عربي مكدّسة" width="800" height="800" loading="lazy" decoding="async">
+          <span class="product__num">01</span>
+          <figure class="media wipe">
+            <img src="../assets/img/art/fladen-top.svg" alt="رغيف خبز عربي من الأعلى" width="400" height="400" loading="lazy" decoding="async">
             <figcaption class="media__tag">[صورة: الخبز العربي عن قرب]</figcaption>
           </figure>
           <div class="product__body">
@@ -194,112 +247,120 @@
             <h3>الخبز العربي</h3>
             <p>منتجنا الأساسي: خبز عربي يُخبز طازجاً كل يوم في مخبزنا في Aesch – لرفوف متجركم ومطبخكم ومطعمكم.</p>
             <dl class="product__meta"><dt>الأنواع والعبوات:</dt> <dd><span class="ph">[الأنواع، الأحجام، عدد الأرغفة في الكيس]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Fladenbrot">اطلبوا الخبز العربي <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Fladenbrot">اطلبوا الخبز العربي <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal" data-delay="1">
-          <figure class="media">
-            <img src="../assets/img/ph/hummus.svg" alt="طبق حمص مع زيت الزيتون" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" style="--d:1" data-tilt>
+          <span class="product__num">02</span>
+          <figure class="media wipe" style="--d:1">
+            <img src="../assets/img/art/hummus.svg" alt="طبق حمص مع زيت الزيتون وطحينة" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[صورة: الحمص والطحينة]</figcaption>
           </figure>
           <div class="product__body">
             <h3>الحمص والطحينة</h3>
             <p>طبقان كلاسيكيان من المطبخ العربي – رفيقا الخبز العربي.</p>
             <dl class="product__meta"><dt>العبوات:</dt> <dd><span class="ph">[أحجام العبوات]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Hummus &amp; Tahina">اطلبوا عرضاً <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Hummus &amp; Tahina">اطلبوا عرضاً <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal" data-delay="2">
-          <figure class="media">
-            <img src="../assets/img/ph/oliven.svg" alt="مرطبان خيار مخلل وطبق زيتون" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" style="--d:2" data-tilt>
+          <span class="product__num">03</span>
+          <figure class="media wipe" style="--d:2">
+            <img src="../assets/img/art/oliven.svg" alt="طبق زيتون وخيار مخلل على لوح خشبي" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[صورة: المخللات والزيتون]</figcaption>
           </figure>
           <div class="product__body">
             <h3>مخلل الخيار والزيتون</h3>
             <p>خيار مخلل وزيتون للأطباق والسندويشات ورفوف البيع.</p>
             <dl class="product__meta"><dt>العبوات:</dt> <dd><span class="ph">[أحجام العبوات]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Gurken &amp; Oliven">اطلبوا عرضاً <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Gurken &amp; Oliven">اطلبوا عرضاً <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal">
-          <figure class="media">
-            <img src="../assets/img/ph/olivenoel.svg" alt="زجاجة زيت زيتون مع غصن زيتون" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" data-tilt>
+          <span class="product__num">04</span>
+          <figure class="media wipe">
+            <img src="../assets/img/art/olivenoel.svg" alt="زجاجة زيت زيتون وطبق زيت مع خبز" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[صورة: زيت الزيتون]</figcaption>
           </figure>
           <div class="product__body">
             <h3>زيت الزيتون</h3>
             <p>زيت زيتون للمطبخ ولرفوف البيع.</p>
             <dl class="product__meta"><dt>العبوات:</dt> <dd><span class="ph">[أحجام الزجاجات والعبوات]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Olivenöl">اطلبوا عرضاً <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Olivenöl">اطلبوا عرضاً <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal" data-delay="1">
-          <figure class="media">
-            <img src="../assets/img/ph/reis-bulgur.svg" alt="أكياس أرز وبرغل" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" style="--d:1" data-tilt>
+          <span class="product__num">05</span>
+          <figure class="media wipe" style="--d:1">
+            <img src="../assets/img/art/reis-bulgur.svg" alt="أوعية أرز وبرغل ناعم وخشن" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[صورة: الأرز والبرغل]</figcaption>
           </figure>
           <div class="product__body">
             <h3>الأرز والبرغل</h3>
             <p>أرز وأنواع متعددة من البرغل – مكونات أساسية لكثير من الأطباق العربية.</p>
             <dl class="product__meta"><dt>العبوات:</dt> <dd><span class="ph">[الأنواع وأحجام الأكياس]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Reis &amp; Bulgur">اطلبوا عرضاً <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Reis &amp; Bulgur">اطلبوا عرضاً <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal" data-delay="2">
-          <figure class="media">
-            <img src="../assets/img/ph/sortiment.svg" alt="رف عليه مواد غذائية عربية" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" style="--d:2" data-tilt>
+          <span class="product__num">06</span>
+          <figure class="media wipe" style="--d:2">
+            <img src="../assets/img/art/sortiment.svg" alt="كيس خيش وأوعية مواد غذائية على طاولة خشبية" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[صورة: التشكيلة في المستودع]</figcaption>
           </figure>
           <div class="product__body">
             <h3>مواد غذائية عربية أخرى</h3>
             <p>نُكيّف تشكيلتنا باستمرار وفق احتياجات زبائننا وما يتوفر في السوق. اسألونا عن المنتج الذي تبحثون عنه.</p>
             <dl class="product__meta"><dt>القائمة الحالية:</dt> <dd><span class="ph">[قائمة المنتجات بصيغة PDF]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Weitere Produkte">اطلبوا عرضاً <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Weitere Produkte">اطلبوا عرضاً <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
       </div>
 
-      <p class="products__note">الأسعار: <span class="ph">[عند الطلب / قائمة أسعار]</span></p>
+      <p class="products__note reveal">الأسعار: <span class="ph">[عند الطلب / قائمة أسعار]</span></p>
     </div>
   </section>
 
   <!-- ================= HÄNDLER & GASTRO ================= -->
-  <section id="haendler" class="section section--sand" aria-labelledby="haendler-title">
+  <section id="haendler" class="section section--oven edge-top edge-bottom" aria-labelledby="haendler-title">
     <div class="container">
       <div class="b2b__grid">
         <div class="reveal">
-          <p class="eyebrow">للتجار والمطاعم</p>
-          <h2 id="haendler-title">خبز عربي طازج لمتجركم أو مطعمكم</h2>
+          <p class="label"><b>(02)</b> للتجار والمطاعم</p>
+          <h2 id="haendler-title">خبز عربي طازج <em>لمتجركم أو مطعمكم</em></h2>
           <p>هل تديرون متجراً للمواد الغذائية أو مطعماً أو محل كباب أو فلافل أو شركة تموين؟ أرسلوا إلينا طلباً دون أي التزام، وسنتواصل معكم بعرض مناسب.</p>
           <div class="b2b__cta">
-            <a class="btn" href="#anfrage">أرسلوا طلب تاجر <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn--secondary" href="tel:+41617516565"><svg aria-hidden="true"><use href="#i-phone"/></svg> اتصال</a>
+            <a class="btn" href="#anfrage" data-magnetic>أرسلوا طلب تاجر <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--light" href="tel:+41617516565" data-magnetic><svg aria-hidden="true"><use href="#i-phone"/></svg> اتصال</a>
           </div>
         </div>
-        <ul class="audiences reveal" data-delay="1" aria-label="لمن">
-          <li><svg aria-hidden="true"><use href="#i-store"/></svg>متاجر المواد الغذائية</li>
-          <li><svg aria-hidden="true"><use href="#i-restaurant"/></svg>المطاعم</li>
-          <li><svg aria-hidden="true"><use href="#i-kebab"/></svg>الكباب والفلافل</li>
-          <li><svg aria-hidden="true"><use href="#i-catering"/></svg>خدمات التموين (كيترينغ)</li>
+        <ul class="audiences" aria-label="لمن">
+          <li class="reveal" style="--d:0"><svg aria-hidden="true"><use href="#i-store"/></svg>متاجر المواد الغذائية</li>
+          <li class="reveal" style="--d:1"><svg aria-hidden="true"><use href="#i-restaurant"/></svg>المطاعم</li>
+          <li class="reveal" style="--d:2"><svg aria-hidden="true"><use href="#i-kebab"/></svg>الكباب والفلافل</li>
+          <li class="reveal" style="--d:3"><svg aria-hidden="true"><use href="#i-catering"/></svg>خدمات التموين (كيترينغ)</li>
         </ul>
       </div>
 
       <h3 class="steps__title reveal">كيف تصبحون من زبائننا</h3>
       <ol class="steps">
         <li class="reveal">
+          <span class="steps__num" aria-hidden="true">1</span>
           <h3>أرسلوا طلبكم</h3>
           <p>املؤوا النموذج أو اتصلوا بنا أو راسلونا عبر واتساب، وأخبرونا بالمنتجات والكميات التي تحتاجونها.</p>
         </li>
-        <li class="reveal" data-delay="1">
+        <li class="reveal" style="--d:1">
+          <span class="steps__num" aria-hidden="true">2</span>
           <h3>استلموا العرض</h3>
           <p>نتواصل معكم بعرض يناسب نشاطكم. <span class="ph">[مدة الرد، مثلاً: «خلال X أيام عمل»]</span></p>
         </li>
-        <li class="reveal" data-delay="2">
+        <li class="reveal" style="--d:2">
+          <span class="steps__num" aria-hidden="true">3</span>
           <h3>توصيل منتظم</h3>
           <p>يوصل سائقونا الطلبيات في المواعيد المتفق عليها – طازجة من Aesch.</p>
         </li>
@@ -321,44 +382,41 @@
     <div class="container">
       <div class="about__grid">
         <div class="about__text reveal">
-          <p class="eyebrow">من نحن</p>
-          <h2 id="ueber-title">نخبز في Aesch منذ 2014</h2>
+          <p class="label"><b>(03)</b> من نحن</p>
+          <h2 id="ueber-title">نخبز في Aesch <em>منذ 2014</em></h2>
           <p>شركة <span lang="de">Bäckerei alpascha GmbH</span> هي منذ عام 2014 أول مخبز صناعي للخبز العربي في سويسرا. في مخبزنا في Aesch بكانتون بازل الريفية نخبز الخبز العربي طازجاً كل يوم.</p>
           <p>وإلى جانب الخبز نورّد العديد من المواد الغذائية العربية الأخرى، ونُكيّف تشكيلتنا باستمرار وفق احتياجات زبائننا وما يتوفر في السوق – ويتولى سائقونا توصيل الطلبيات.</p>
           <p><span class="ph">[اختياري: قصة العائلة المؤسِّسة / الفريق]</span></p>
         </div>
-        <div class="mosaic reveal" data-delay="1">
-          <figure class="media">
-            <img src="../assets/img/ph/backstube.svg" alt="فرن المخبز مع أرغفة الخبز" width="800" height="600" loading="lazy" decoding="async">
+        <div class="mosaic">
+          <figure class="media wipe">
+            <img src="../assets/img/art/backstube.svg" alt="فرن المخبز مع رغيف خبز على المجرفة" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[صورة: المخبز والفرن]</figcaption>
           </figure>
-          <figure class="media">
-            <img src="../assets/img/ph/lieferwagen.svg" alt="سيارة توصيل تابعة للمخبز" width="800" height="600" loading="lazy" decoding="async">
+          <figure class="media media--slot wipe" style="--d:1" data-parallax="0.05">
+            <div class="slot" aria-hidden="true"><svg><use href="#i-truck"/></svg><span>الصورة قريباً</span></div>
             <figcaption class="media__tag">[صورة: سيارة التوصيل]</figcaption>
           </figure>
-          <figure class="media">
-            <img src="../assets/img/ph/team.svg" alt="فريق مخبز alpascha" width="800" height="600" loading="lazy" decoding="async">
+          <figure class="media media--slot wipe" style="--d:2" data-parallax="-0.06">
+            <div class="slot" aria-hidden="true"><svg><use href="#i-wheat"/></svg><span>الصورة قريباً</span></div>
             <figcaption class="media__tag">[صورة: الفريق]</figcaption>
           </figure>
         </div>
       </div>
 
-      <aside class="history reveal" aria-labelledby="geschichte-title">
-        <svg aria-hidden="true"><use href="#i-wheat"/></svg>
-        <div>
-          <h3 id="geschichte-title">حكاية الخبز المسطّح</h3>
-          <p>الخبز المسطّح هو أقدم أشكال الخبز: حبوب مطحونة وماء، تُخبز على هيئة أرغفة رقيقة ومسطّحة.</p>
-        </div>
-      </aside>
+      <div class="bigquote">
+        <h3 class="bigquote__label reveal"><svg aria-hidden="true"><use href="#i-wheat"/></svg>حكاية الخبز المسطّح</h3>
+        <blockquote><p data-words>الخبز المسطّح هو أقدم أشكال الخبز: حبوب مطحونة وماء، تُخبز على هيئة أرغفة رقيقة ومسطّحة.</p></blockquote>
+      </div>
     </div>
   </section>
 
   <!-- ================= JOBS ================= -->
-  <section id="jobs" class="section section--sand" aria-labelledby="jobs-title">
+  <section id="jobs" class="section section--sand edge-top" aria-labelledby="jobs-title">
     <div class="container">
       <header class="section__head reveal">
-        <p class="eyebrow">الوظائف</p>
-        <h2 id="jobs-title">العمل لدى alpascha</h2>
+        <p class="label"><b>(04)</b> الوظائف</p>
+        <h2 id="jobs-title">العمل لدى <em>alpascha</em></h2>
         <p>يعمل في فريقنا سائقون وعاملون في الإنتاج.</p>
       </header>
 
@@ -369,11 +427,13 @@
 
       <ul id="jobs-list" class="jobs" data-mail="info@baeckerei-alpascha.ch">
         <li class="job reveal">
+          <svg class="job__icon" aria-hidden="true"><use href="#i-truck"/></svg>
           <span class="job__badge">لا توجد وظيفة شاغرة حالياً</span>
           <h3>سائق / سائقة</h3>
           <p>توصيل الطلبيات إلى زبائننا.</p>
         </li>
-        <li class="job reveal" data-delay="1">
+        <li class="job reveal" style="--d:1">
+          <svg class="job__icon" aria-hidden="true"><use href="#i-wheat"/></svg>
           <span class="job__badge">لا توجد وظيفة شاغرة حالياً</span>
           <h3>عامل / عاملة في الإنتاج</h3>
           <p>العمل في مخبزنا في Aesch.</p>
@@ -381,7 +441,7 @@
       </ul>
 
       <div class="jobs__cta reveal">
-        <a class="btn btn--secondary" href="mailto:info@baeckerei-alpascha.ch?subject=%D8%B7%D9%84%D8%A8%20%D8%AA%D9%88%D8%B8%D9%8A%D9%81"><svg aria-hidden="true"><use href="#i-mail"/></svg> أرسلوا سيرتكم الذاتية عبر البريد الإلكتروني</a>
+        <a class="btn btn--secondary" href="mailto:info@baeckerei-alpascha.ch?subject=%D8%B7%D9%84%D8%A8%20%D8%AA%D9%88%D8%B8%D9%8A%D9%81" data-magnetic><svg aria-hidden="true"><use href="#i-mail"/></svg> أرسلوا سيرتكم الذاتية عبر البريد الإلكتروني</a>
       </div>
     </div>
   </section>
@@ -390,8 +450,8 @@
   <section id="kontakt" class="section" aria-labelledby="kontakt-title">
     <div class="container">
       <header class="section__head reveal">
-        <p class="eyebrow">اتصل بنا</p>
-        <h2 id="kontakt-title">كونوا من زبائننا</h2>
+        <p class="label"><b>(05)</b> اتصل بنا</p>
+        <h2 id="kontakt-title">كونوا <em>من زبائننا</em></h2>
         <p>أرسلوا إلينا طلبكم – أو اتصلوا بنا مباشرة.</p>
       </header>
 
@@ -496,7 +556,7 @@
           </div>
         </div>
 
-        <div class="contact__info reveal" data-delay="1">
+        <div class="contact__info reveal" style="--d:1">
           <ul class="contact-list">
             <li><svg aria-hidden="true"><use href="#i-pin"/></svg>
               <div><strong>العنوان</strong>
@@ -519,8 +579,8 @@
           </ul>
 
           <div class="contact__quick">
-            <a class="btn" href="tel:+41617516565"><svg aria-hidden="true"><use href="#i-phone"/></svg> اتصال</a>
-            <a class="btn btn--secondary" href="#kontakt" data-whatsapp><svg aria-hidden="true"><use href="#i-whatsapp"/></svg> واتساب</a>
+            <a class="btn" href="tel:+41617516565" data-magnetic><svg aria-hidden="true"><use href="#i-phone"/></svg> اتصال</a>
+            <a class="btn btn--secondary" href="#kontakt" data-whatsapp data-magnetic><svg aria-hidden="true"><use href="#i-whatsapp"/></svg> واتساب</a>
           </div>
 
           <div class="map">
@@ -538,12 +598,12 @@
   </section>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer edge-top">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="brand" href="./">
-          <img src="../assets/img/logo-mark.svg" alt="" width="40" height="40">
+          <img src="../assets/img/logo-mark.svg" alt="" width="42" height="42">
           <span class="brand__text"><span class="brand__name">alpascha</span><span class="brand__sub">مخبز · Aesch</span></span>
         </a>
         <p>خبز عربي طازج يومياً من Aesch – منذ 2014.</p>
@@ -574,6 +634,7 @@
       <span class="concept-footnote">نسخة تصميم مقترحة – المحتوى بين [قوسين معقوفين] نصوص مؤقتة.</span>
     </div>
   </div>
+  <p class="footer__word" aria-hidden="true">alpascha</p>
 </footer>
 
 <nav class="action-bar" aria-label="تواصل سريع">

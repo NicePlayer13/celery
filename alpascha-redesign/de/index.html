@@ -20,6 +20,8 @@
   <!-- [og:image] ergänzen, sobald echtes Foto vorhanden (1200×630 JPG) -->
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/readex-pro-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/img/art/fladen.svg" as="image">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script>document.documentElement.classList.add("js")</script>
   <!-- TODO vor Livegang: "geo" (latitude/longitude) ergänzen, sobald die Koordinaten des Standorts bestätigt sind -->
@@ -99,10 +101,10 @@
 
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-<header class="site-header">
+<header class="site-header is-top">
   <div class="container site-header__inner">
     <a class="brand" href="./" aria-label="Bäckerei alpascha – Startseite">
-      <img src="../assets/img/logo-mark.svg" alt="" width="40" height="40">
+      <img src="../assets/img/logo-mark.svg" alt="" width="42" height="42">
       <span class="brand__text"><span class="brand__name">alpascha</span><span class="brand__sub">Bäckerei · Aesch</span></span>
     </a>
 
@@ -123,7 +125,7 @@
       <a href="../ar/" lang="ar" hreflang="ar">العربية</a>
     </div>
 
-    <a class="btn btn--small header-cta" href="#anfrage">Anfrage senden</a>
+    <a class="btn btn--small header-cta" href="#anfrage" data-magnetic>Anfrage senden</a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <svg class="icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -131,46 +133,93 @@
       <span class="visually-hidden">Menü</span>
     </button>
   </div>
+  <span class="scroll-progress" aria-hidden="true"></span>
 </header>
 
 <main id="main">
 
-  <!-- ================= HERO ================= -->
+  <!-- ================= HERO: der Ofen ================= -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="container hero__grid">
       <div class="hero__text">
-        <p class="eyebrow reveal">Bäckerei alpascha · Aesch BL</p>
-        <h1 id="hero-title" class="reveal" data-delay="1">Arabisches Fladenbrot – täglich frisch aus Aesch</h1>
-        <ul class="hero__sub reveal" data-delay="2" aria-label="Auf einen Blick">
+        <p class="label fade" style="--d:0"><b>alpascha</b> Bäckerei · Aesch BL</p>
+        <h1 id="hero-title">
+          <span class="line" style="--l:0"><span>Arabisches Fladenbrot –</span></span>
+          <span class="line" style="--l:1"><span><em>täglich frisch</em></span></span>
+          <span class="line" style="--l:2"><span>aus Aesch</span></span>
+        </h1>
+        <ul class="hero__facts fade" style="--d:1" aria-label="Auf einen Blick">
           <li>Seit 2014</li>
           <li>Erste industrielle Fladenbrot-Bäckerei der Schweiz</li>
           <li>Lieferung an Handel &amp; Gastronomie</li>
         </ul>
-        <p class="hero__lead reveal" data-delay="2">Wir backen jeden Tag frisches Fladenbrot und liefern dazu viele weitere arabische Lebensmittel – von Hummus und Tahina über Oliven bis zu Reis und Bulgur.</p>
-        <div class="hero__actions reveal" data-delay="3">
-          <a class="btn" href="#anfrage">Händler-Anfrage <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn--secondary" href="#produkte">Produkte ansehen</a>
+        <p class="hero__lead fade" style="--d:2">Wir backen jeden Tag frisches Fladenbrot und liefern dazu viele weitere arabische Lebensmittel – von Hummus und Tahina über Oliven bis zu Reis und Bulgur.</p>
+        <div class="hero__actions fade" style="--d:3">
+          <a class="btn" href="#anfrage" data-magnetic>Händler-Anfrage <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--light" href="#produkte" data-magnetic>Produkte ansehen</a>
         </div>
-        <p class="hero__call reveal" data-delay="3">Lieber direkt sprechen? <a href="tel:+41617516565">061 751 65 65</a></p>
+        <p class="hero__call fade" style="--d:4">Lieber direkt sprechen? <a href="tel:+41617516565">061 751 65 65</a></p>
       </div>
 
-      <figure class="media hero__media reveal">
-        <!-- Für echte Fotos: <picture><source type="image/avif" srcset="…"><source type="image/webp" srcset="…"><img …></picture> -->
-        <img src="../assets/img/ph/fladenbrot.svg" alt="Stapel frisch gebackener arabischer Fladenbrote" width="800" height="800" fetchpriority="high">
-        <div class="hero__badge" aria-hidden="true"><small>seit</small><strong>2014</strong></div>
-        <figcaption class="media__tag">[Foto: frisches Fladenbrot aus der Backstube]</figcaption>
-      </figure>
+      <div class="hero__visual" data-parallax="0.08">
+        <div class="scene" role="img" aria-label="Illustration: Stapel frisch gebackener Fladenbrote, aus dem Dampf aufsteigt">
+          <div class="scene__float"><img src="../assets/img/art/fladen-top.svg" alt="" width="400" height="400"></div>
+          <svg class="scene__steam" viewBox="0 0 400 300" aria-hidden="true">
+            <path style="--s:0" d="M120 300c-24-40 26-70 6-110s22-70 0-110"/>
+            <path style="--s:1" d="M205 300c22-40-26-70-6-110s-22-70 0-110"/>
+            <path style="--s:2" d="M285 300c-24-40 26-70 6-110s22-70 0-110"/>
+          </svg>
+          <div class="scene__stack">
+            <img src="../assets/img/art/fladen.svg" alt="" width="600" height="200" style="--i:0;--r:1.5deg">
+            <img src="../assets/img/art/fladen-b.svg" alt="" width="600" height="200" style="--i:1;--r:-2deg">
+            <img src="../assets/img/art/fladen.svg" alt="" width="600" height="200" style="--i:2;--r:.5deg">
+            <img src="../assets/img/art/fladen-b.svg" alt="" width="600" height="200" style="--i:3;--r:2.5deg">
+            <img src="../assets/img/art/fladen.svg" alt="" width="600" height="200" style="--i:4;--r:-1.5deg">
+            <img src="../assets/img/art/fladen-b.svg" alt="" width="600" height="200" style="--i:5;--r:1deg">
+          </div>
+          <div class="scene__dust" aria-hidden="true">
+            <span style="--x:12%;--y:30%;--t:7s;--dl:0s;--dx:30px"></span>
+            <span style="--x:22%;--y:20%;--s:3px;--t:9s;--dl:1.5s;--dx:-20px"></span>
+            <span style="--x:35%;--y:45%;--t:6s;--dl:3s;--dx:15px"></span>
+            <span style="--x:48%;--y:25%;--s:5px;--t:8s;--dl:.8s;--dx:-35px"></span>
+            <span style="--x:58%;--y:40%;--s:3px;--t:7.5s;--dl:2.2s;--dx:25px"></span>
+            <span style="--x:68%;--y:18%;--t:10s;--dl:4s;--dx:-15px"></span>
+            <span style="--x:78%;--y:35%;--s:3px;--t:6.5s;--dl:1s;--dx:40px"></span>
+            <span style="--x:88%;--y:28%;--t:8.5s;--dl:3.5s;--dx:-25px"></span>
+            <span style="--x:28%;--y:55%;--s:2px;--t:7s;--dl:5s;--dx:10px"></span>
+            <span style="--x:72%;--y:52%;--s:2px;--t:9s;--dl:6s;--dx:-10px"></span>
+          </div>
+          <div class="badge-spin" aria-hidden="true">
+            <svg viewBox="0 0 150 150"><defs><path id="badge-circle" d="M75 75m-60 0a60 60 0 1 1 120 0a60 60 0 1 1-120 0"/></defs><text><textPath href="#badge-circle" textLength="372" lengthAdjust="spacing">SEIT 2014 · TÄGLICH FRISCH · AESCH BL ·</textPath></text></svg>
+            <strong>2014</strong>
+          </div>
+          <span class="media__tag">[Foto/Video: frisches Fladenbrot aus dem Ofen]</span>
+        </div>
+      </div>
     </div>
+    <a class="scroll-cue" href="#produkte"><i></i>Scrollen</a>
   </section>
+
+  <!-- ================= LAUFBÄNDER ================= -->
+  <div class="tapes" aria-hidden="true">
+    <div class="tape tape--a"><div class="tape__track">
+      <span>Täglich frisch gebacken <i>✺</i> Seit 2014 in Aesch <i>✺</i> Arabisches Fladenbrot <i>✺</i> Hummus · Tahina · Oliven <i>✺</i> Reis &amp; Bulgur <i>✺</i> Eigene Lieferung <i>✺</i></span>
+      <span>Täglich frisch gebacken <i>✺</i> Seit 2014 in Aesch <i>✺</i> Arabisches Fladenbrot <i>✺</i> Hummus · Tahina · Oliven <i>✺</i> Reis &amp; Bulgur <i>✺</i> Eigene Lieferung <i>✺</i></span>
+    </div></div>
+    <div class="tape tape--b"><div class="tape__track">
+      <span>Für Läden <i>✺</i> Restaurants <i>✺</i> Kebab &amp; Falafel <i>✺</i> Catering <i>✺</i> Jetzt anfragen <i>✺</i> Für Läden <i>✺</i> Restaurants <i>✺</i> Kebab &amp; Falafel <i>✺</i> Catering <i>✺</i> Jetzt anfragen <i>✺</i></span>
+      <span>Für Läden <i>✺</i> Restaurants <i>✺</i> Kebab &amp; Falafel <i>✺</i> Catering <i>✺</i> Jetzt anfragen <i>✺</i> Für Läden <i>✺</i> Restaurants <i>✺</i> Kebab &amp; Falafel <i>✺</i> Catering <i>✺</i> Jetzt anfragen <i>✺</i></span>
+    </div></div>
+  </div>
 
   <!-- ================= FAKTEN ================= -->
   <section class="facts" aria-label="Fakten">
     <div class="container">
       <ul>
-        <li><svg aria-hidden="true"><use href="#i-calendar"/></svg><div><strong>Seit 2014</strong><span>in Aesch (BL)</span></div></li>
-        <li><svg aria-hidden="true"><use href="#i-sun"/></svg><div><strong>Täglich frisch</strong><span>jeden Tag gebacken</span></div></li>
-        <li><svg aria-hidden="true"><use href="#i-truck"/></svg><div><strong>Eigene Lieferung</strong><span>mit eigenen Chauffeuren</span></div></li>
-        <li><svg aria-hidden="true"><use href="#i-map"/></svg><div><strong><span class="ph">[Liefergebiet]</span></strong><span>Liefertage: <span class="ph">[Liefertage]</span></span></div></li>
+        <li class="reveal" style="--d:0"><strong>Seit 2014</strong><span>in Aesch (BL)</span></li>
+        <li class="reveal" style="--d:1"><strong>Täglich</strong><span>frisch gebacken</span></li>
+        <li class="reveal" style="--d:2"><strong>Eigene</strong><span>Lieferung mit eigenen Chauffeuren</span></li>
+        <li class="reveal" style="--d:3"><strong><span class="ph">[Liefergebiet]</span></strong><span>Liefertage: <span class="ph">[Liefertage]</span></span></li>
       </ul>
     </div>
   </section>
@@ -178,16 +227,19 @@
   <!-- ================= PRODUKTE ================= -->
   <section id="produkte" class="section" aria-labelledby="produkte-title">
     <div class="container">
-      <header class="section__head reveal">
-        <p class="eyebrow">Unser Produkteangebot</p>
-        <h2 id="produkte-title">Fladenbrot und arabische Spezialitäten aus einer Hand</h2>
-        <p>Im Zentrum steht unser täglich frisch gebackenes Fladenbrot. Dazu liefern wir viele weitere arabische Lebensmittel – alles mit einer Bestellung.</p>
+      <header class="section__head section__head--split">
+        <div class="reveal">
+          <p class="label"><b>(01)</b> Produkte</p>
+          <h2 id="produkte-title">Fladenbrot und <em>Spezialitäten</em> aus einer Hand</h2>
+        </div>
+        <p class="reveal" style="--d:1">Im Zentrum steht unser täglich frisch gebackenes Fladenbrot. Dazu liefern wir viele weitere arabische Lebensmittel – alles mit einer Bestellung.</p>
       </header>
 
       <div class="products">
         <article class="product product--feature reveal">
-          <figure class="media">
-            <img src="../assets/img/ph/fladenbrot.svg" alt="Arabisches Fladenbrot, gestapelt" width="800" height="800" loading="lazy" decoding="async">
+          <span class="product__num">01</span>
+          <figure class="media wipe">
+            <img src="../assets/img/art/fladen-top.svg" alt="Arabisches Fladenbrot, von oben" width="400" height="400" loading="lazy" decoding="async">
             <figcaption class="media__tag">[Foto: Fladenbrot, Detailaufnahme]</figcaption>
           </figure>
           <div class="product__body">
@@ -195,112 +247,120 @@
             <h3>Arabisches Fladenbrot</h3>
             <p>Unser Kernprodukt: arabisches Fladenbrot, jeden Tag frisch aus unserer Backstube in Aesch – für Ihr Ladenregal, Ihre Küche und Ihren Imbiss.</p>
             <dl class="product__meta"><dt>Sorten &amp; Gebinde:</dt> <dd><span class="ph">[Sorten, Grössen, Stück pro Beutel]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Fladenbrot">Fladenbrot anfragen <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Fladenbrot">Fladenbrot anfragen <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal" data-delay="1">
-          <figure class="media">
-            <img src="../assets/img/ph/hummus.svg" alt="Schale Hummus mit Olivenöl" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" style="--d:1" data-tilt>
+          <span class="product__num">02</span>
+          <figure class="media wipe" style="--d:1">
+            <img src="../assets/img/art/hummus.svg" alt="Schale Hummus mit Olivenöl" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[Foto: Hummus &amp; Tahina]</figcaption>
           </figure>
           <div class="product__body">
             <h3>Hummus &amp; Tahina</h3>
             <p>Zwei Klassiker der arabischen Küche – passend zum Fladenbrot.</p>
             <dl class="product__meta"><dt>Gebinde:</dt> <dd><span class="ph">[Packungsgrössen]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Hummus &amp; Tahina">Anfragen <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Hummus &amp; Tahina">Anfragen <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal" data-delay="2">
-          <figure class="media">
-            <img src="../assets/img/ph/oliven.svg" alt="Glas mit eingelegten Gurken und Schale mit Oliven" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" style="--d:2" data-tilt>
+          <span class="product__num">03</span>
+          <figure class="media wipe" style="--d:2">
+            <img src="../assets/img/art/oliven.svg" alt="Glas mit eingelegten Gurken und Schale mit Oliven" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[Foto: Gurken &amp; Oliven]</figcaption>
           </figure>
           <div class="product__body">
             <h3>Eingelegte Gurken &amp; Oliven</h3>
             <p>Eingelegte Gurken und Oliven für Teller, Sandwich und Verkaufsregal.</p>
             <dl class="product__meta"><dt>Gebinde:</dt> <dd><span class="ph">[Packungsgrössen]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Gurken &amp; Oliven">Anfragen <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Gurken &amp; Oliven">Anfragen <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal">
-          <figure class="media">
-            <img src="../assets/img/ph/olivenoel.svg" alt="Flasche Olivenöl mit Olivenzweig" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" data-tilt>
+          <span class="product__num">04</span>
+          <figure class="media wipe">
+            <img src="../assets/img/art/olivenoel.svg" alt="Flasche Olivenöl mit Olivenzweig" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[Foto: Olivenöl]</figcaption>
           </figure>
           <div class="product__body">
             <h3>Olivenöl</h3>
-            <p>Olivenöl für die Küche und zum Weiterverkauf.</p>
+            <p>Olivenöl für Küche und Verkaufsregal.</p>
             <dl class="product__meta"><dt>Gebinde:</dt> <dd><span class="ph">[Flaschen-/Kanistergrössen]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Olivenöl">Anfragen <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Olivenöl">Anfragen <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal" data-delay="1">
-          <figure class="media">
-            <img src="../assets/img/ph/reis-bulgur.svg" alt="Säcke mit Reis und Bulgur" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" style="--d:1" data-tilt>
+          <span class="product__num">05</span>
+          <figure class="media wipe" style="--d:1">
+            <img src="../assets/img/art/reis-bulgur.svg" alt="Säcke mit Reis und Bulgur" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[Foto: Reis &amp; Bulgur]</figcaption>
           </figure>
           <div class="product__body">
             <h3>Reis &amp; Bulgur</h3>
             <p>Reis und mehrere Sorten Bulgur – Grundzutaten für viele arabische Gerichte.</p>
             <dl class="product__meta"><dt>Gebinde:</dt> <dd><span class="ph">[Sorten &amp; Sackgrössen]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Reis &amp; Bulgur">Anfragen <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Reis &amp; Bulgur">Anfragen <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
 
-        <article class="product reveal" data-delay="2">
-          <figure class="media">
-            <img src="../assets/img/ph/sortiment.svg" alt="Regal mit arabischen Lebensmitteln" width="800" height="600" loading="lazy" decoding="async">
+        <article class="product reveal" style="--d:2" data-tilt>
+          <span class="product__num">06</span>
+          <figure class="media wipe" style="--d:2">
+            <img src="../assets/img/art/sortiment.svg" alt="Regal mit arabischen Lebensmitteln" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[Foto: Sortiment im Lager]</figcaption>
           </figure>
           <div class="product__body">
             <h3>Weitere arabische Lebensmittel</h3>
             <p>Unser Sortiment passen wir laufend an die Bedürfnisse unserer Kundschaft und an die Marktverfügbarkeit an. Fragen Sie nach Ihrem Wunschprodukt.</p>
             <dl class="product__meta"><dt>Aktuelle Liste:</dt> <dd><span class="ph">[Sortimentsliste als PDF]</span></dd></dl>
-            <div class="product__actions"><button class="text-link" type="button" data-product="Weitere Produkte">Anfragen <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div><button class="text-link" type="button" data-product="Weitere Produkte">Anfragen <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
         </article>
       </div>
 
-      <p class="products__note">Preise: <span class="ph">[auf Anfrage / Preisliste]</span></p>
+      <p class="products__note reveal">Preise: <span class="ph">[auf Anfrage / Preisliste]</span></p>
     </div>
   </section>
 
-  <!-- ================= HÄNDLER & GASTRO ================= -->
-  <section id="haendler" class="section section--sand" aria-labelledby="haendler-title">
+  <!-- ================= HÄNDLER & GASTRO (dunkel) ================= -->
+  <section id="haendler" class="section section--oven edge-top edge-bottom" aria-labelledby="haendler-title">
     <div class="container">
       <div class="b2b__grid">
         <div class="reveal">
-          <p class="eyebrow">Für Händler &amp; Gastro</p>
-          <h2 id="haendler-title">Frisches Fladenbrot für Ihr Geschäft</h2>
+          <p class="label"><b>(02)</b> Für Händler &amp; Gastro</p>
+          <h2 id="haendler-title">Frisches Fladenbrot für <em>Ihr Geschäft</em></h2>
           <p>Sie führen ein Lebensmittelgeschäft, ein Restaurant, einen Kebab- oder Falafel-Imbiss oder einen Catering-Betrieb? Senden Sie uns eine unverbindliche Anfrage – wir melden uns mit einem Angebot.</p>
           <div class="b2b__cta">
-            <a class="btn" href="#anfrage">Händler-Anfrage senden <svg class="icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn--secondary" href="tel:+41617516565"><svg aria-hidden="true"><use href="#i-phone"/></svg> Anrufen</a>
+            <a class="btn" href="#anfrage" data-magnetic>Händler-Anfrage senden <svg class="icon-arrow icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--light" href="tel:+41617516565" data-magnetic><svg aria-hidden="true"><use href="#i-phone"/></svg> Anrufen</a>
           </div>
         </div>
-        <ul class="audiences reveal" data-delay="1" aria-label="Für wen">
-          <li><svg aria-hidden="true"><use href="#i-store"/></svg>Lebensmittel&shy;geschäfte</li>
-          <li><svg aria-hidden="true"><use href="#i-restaurant"/></svg>Restaurants</li>
-          <li><svg aria-hidden="true"><use href="#i-kebab"/></svg>Kebab &amp; Falafel</li>
-          <li><svg aria-hidden="true"><use href="#i-catering"/></svg>Catering</li>
+        <ul class="audiences" aria-label="Für wen">
+          <li class="reveal" style="--d:0"><svg aria-hidden="true"><use href="#i-store"/></svg>Lebensmittel&shy;geschäfte</li>
+          <li class="reveal" style="--d:1"><svg aria-hidden="true"><use href="#i-restaurant"/></svg>Restaurants</li>
+          <li class="reveal" style="--d:2"><svg aria-hidden="true"><use href="#i-kebab"/></svg>Kebab &amp; Falafel</li>
+          <li class="reveal" style="--d:3"><svg aria-hidden="true"><use href="#i-catering"/></svg>Catering</li>
         </ul>
       </div>
 
       <h3 class="steps__title reveal">So werden Sie Kunde</h3>
       <ol class="steps">
         <li class="reveal">
+          <span class="steps__num" aria-hidden="true">1</span>
           <h3>Anfrage senden</h3>
           <p>Formular ausfüllen, anrufen oder per WhatsApp schreiben. Sagen Sie uns, welche Produkte und Mengen Sie brauchen.</p>
         </li>
-        <li class="reveal" data-delay="1">
+        <li class="reveal" style="--d:1">
+          <span class="steps__num" aria-hidden="true">2</span>
           <h3>Angebot erhalten</h3>
-          <p>Wir melden uns mit einem Angebot für Ihren Betrieb. <span class="ph">[Reaktionszeit, z. B. „innert X Arbeitstagen“]</span></p>
+          <p>Wir melden uns mit einem Angebot für Ihren Betrieb. <span class="ph">[Reaktionszeit, z. B. «innert X Arbeitstagen»]</span></p>
         </li>
-        <li class="reveal" data-delay="2">
+        <li class="reveal" style="--d:2">
+          <span class="steps__num" aria-hidden="true">3</span>
           <h3>Regelmässige Lieferung</h3>
           <p>Unsere Chauffeure liefern zu den vereinbarten Zeiten – frisch aus Aesch.</p>
         </li>
@@ -322,44 +382,41 @@
     <div class="container">
       <div class="about__grid">
         <div class="about__text reveal">
-          <p class="eyebrow">Über uns</p>
-          <h2 id="ueber-title">Seit 2014 backen wir in Aesch</h2>
+          <p class="label"><b>(03)</b> Über uns</p>
+          <h2 id="ueber-title">Seit 2014 backen wir <em>in Aesch</em></h2>
           <p>Die Bäckerei alpascha GmbH ist seit 2014 die erste industrielle Bäckerei für arabisches Fladenbrot in der Schweiz. In unserer Backstube in Aesch (BL) backen wir jeden Tag frisches Fladenbrot.</p>
           <p>Neben dem Brot liefern wir viele weitere arabische Lebensmittel. Unser Sortiment passen wir laufend an die Bedürfnisse unserer Kundschaft und an die Marktverfügbarkeit an – ausgeliefert von unseren eigenen Chauffeuren.</p>
           <p><span class="ph">[Optional: persönliche Geschichte der Gründerfamilie / des Teams]</span></p>
         </div>
-        <div class="mosaic reveal" data-delay="1">
-          <figure class="media">
-            <img src="../assets/img/ph/backstube.svg" alt="Ofen in der Backstube mit Fladenbroten" width="800" height="600" loading="lazy" decoding="async">
+        <div class="mosaic">
+          <figure class="media wipe">
+            <img src="../assets/img/art/backstube.svg" alt="Ofen in der Backstube mit Fladenbroten" width="800" height="600" loading="lazy" decoding="async">
             <figcaption class="media__tag">[Foto: Backstube &amp; Ofen]</figcaption>
           </figure>
-          <figure class="media">
-            <img src="../assets/img/ph/lieferwagen.svg" alt="Lieferwagen der Bäckerei" width="800" height="600" loading="lazy" decoding="async">
+          <figure class="media media--slot wipe" style="--d:1" data-parallax="0.05">
+            <div class="slot" aria-hidden="true"><svg><use href="#i-truck"/></svg><span>Foto folgt</span></div>
             <figcaption class="media__tag">[Foto: Lieferwagen]</figcaption>
           </figure>
-          <figure class="media">
-            <img src="../assets/img/ph/team.svg" alt="Team der Bäckerei alpascha" width="800" height="600" loading="lazy" decoding="async">
+          <figure class="media media--slot wipe" style="--d:2" data-parallax="-0.06">
+            <div class="slot" aria-hidden="true"><svg><use href="#i-wheat"/></svg><span>Foto folgt</span></div>
             <figcaption class="media__tag">[Foto: Team]</figcaption>
           </figure>
         </div>
       </div>
 
-      <aside class="history reveal" aria-labelledby="geschichte-title">
-        <svg aria-hidden="true"><use href="#i-wheat"/></svg>
-        <div>
-          <h3 id="geschichte-title">Geschichte zum Fladenbrot</h3>
-          <p>Fladenbrot ist die früheste Form von Brot: gemahlenes Getreide und Wasser, gebacken in dünnen, flachen Laiben.</p>
-        </div>
-      </aside>
+      <div class="bigquote">
+        <h3 class="bigquote__label reveal"><svg aria-hidden="true"><use href="#i-wheat"/></svg>Geschichte zum Fladenbrot</h3>
+        <blockquote><p data-words>Fladenbrot ist die früheste Form von Brot: gemahlenes Getreide und Wasser, gebacken in dünnen, flachen Laiben.</p></blockquote>
+      </div>
     </div>
   </section>
 
   <!-- ================= JOBS ================= -->
-  <section id="jobs" class="section section--sand" aria-labelledby="jobs-title">
+  <section id="jobs" class="section section--sand edge-top" aria-labelledby="jobs-title">
     <div class="container">
       <header class="section__head reveal">
-        <p class="eyebrow">Jobs</p>
-        <h2 id="jobs-title">Arbeiten bei alpascha</h2>
+        <p class="label"><b>(04)</b> Jobs</p>
+        <h2 id="jobs-title">Arbeiten bei <em>alpascha</em></h2>
         <p>In unserem Team arbeiten Chauffeure und Mitarbeitende in der Produktion.</p>
       </header>
 
@@ -371,11 +428,13 @@
       <!-- Inhalt wird automatisch aus assets/js/site-config.js ersetzt, sobald dort Stellen eingetragen sind -->
       <ul id="jobs-list" class="jobs" data-mail="info@baeckerei-alpascha.ch">
         <li class="job reveal">
+          <svg class="job__icon" aria-hidden="true"><use href="#i-truck"/></svg>
           <span class="job__badge">Derzeit keine offene Stelle</span>
           <h3>Chauffeur/in</h3>
           <p>Auslieferung an unsere Kundschaft.</p>
         </li>
-        <li class="job reveal" data-delay="1">
+        <li class="job reveal" style="--d:1">
+          <svg class="job__icon" aria-hidden="true"><use href="#i-wheat"/></svg>
           <span class="job__badge">Derzeit keine offene Stelle</span>
           <h3>Mitarbeiter/in Produktion</h3>
           <p>Mitarbeit in unserer Backstube in Aesch.</p>
@@ -383,7 +442,7 @@
       </ul>
 
       <div class="jobs__cta reveal">
-        <a class="btn btn--secondary" href="mailto:info@baeckerei-alpascha.ch?subject=Initiativbewerbung"><svg aria-hidden="true"><use href="#i-mail"/></svg> Initiativbewerbung per E-Mail</a>
+        <a class="btn btn--secondary" href="mailto:info@baeckerei-alpascha.ch?subject=Initiativbewerbung" data-magnetic><svg aria-hidden="true"><use href="#i-mail"/></svg> Initiativbewerbung per E-Mail</a>
       </div>
     </div>
   </section>
@@ -392,13 +451,12 @@
   <section id="kontakt" class="section" aria-labelledby="kontakt-title">
     <div class="container">
       <header class="section__head reveal">
-        <p class="eyebrow">Kontakt</p>
-        <h2 id="kontakt-title">Werden Sie unser Kunde</h2>
+        <p class="label"><b>(05)</b> Kontakt</p>
+        <h2 id="kontakt-title">Werden Sie <em>unser Kunde</em></h2>
         <p>Senden Sie uns Ihre Anfrage – oder rufen Sie uns einfach an.</p>
       </header>
 
       <div class="contact__grid">
-        <!-- Formular -->
         <div id="anfrage" class="contact__form reveal">
           <div class="form-card">
             <h3>Händler- &amp; Gastro-Anfrage</h3>
@@ -498,8 +556,7 @@
           </div>
         </div>
 
-        <!-- Kontaktdaten -->
-        <div class="contact__info reveal" data-delay="1">
+        <div class="contact__info reveal" style="--d:1">
           <ul class="contact-list">
             <li><svg aria-hidden="true"><use href="#i-pin"/></svg>
               <div><strong>Adresse</strong>
@@ -522,8 +579,8 @@
           </ul>
 
           <div class="contact__quick">
-            <a class="btn" href="tel:+41617516565"><svg aria-hidden="true"><use href="#i-phone"/></svg> Anrufen</a>
-            <a class="btn btn--secondary" href="#kontakt" data-whatsapp><svg aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp</a>
+            <a class="btn" href="tel:+41617516565" data-magnetic><svg aria-hidden="true"><use href="#i-phone"/></svg> Anrufen</a>
+            <a class="btn btn--secondary" href="#kontakt" data-whatsapp data-magnetic><svg aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp</a>
           </div>
 
           <div class="map">
@@ -541,12 +598,12 @@
   </section>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer edge-top">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="brand" href="./">
-          <img src="../assets/img/logo-mark.svg" alt="" width="40" height="40">
+          <img src="../assets/img/logo-mark.svg" alt="" width="42" height="42">
           <span class="brand__text"><span class="brand__name">alpascha</span><span class="brand__sub">Bäckerei · Aesch</span></span>
         </a>
         <p>Arabisches Fladenbrot, täglich frisch aus Aesch – seit 2014.</p>
@@ -577,6 +634,7 @@
       <span class="concept-footnote">Konzeptentwurf – Inhalte in [eckigen Klammern] sind Platzhalter.</span>
     </div>
   </div>
+  <p class="footer__word" aria-hidden="true">alpascha</p>
 </footer>
 
 <nav class="action-bar" aria-label="Schnellkontakt">
