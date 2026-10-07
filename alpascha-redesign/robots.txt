@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.baeckerei-alpascha.ch/sitemap.xml

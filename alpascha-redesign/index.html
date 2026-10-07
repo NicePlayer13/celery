@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bäckerei alpascha – Arabisches Fladenbrot aus Aesch</title>
+  <meta name="description" content="Bäckerei alpascha GmbH, Aesch BL: arabisches Fladenbrot, täglich frisch. Deutsch | العربية">
+  <link rel="canonical" href="https://www.baeckerei-alpascha.ch/de/">
+  <link rel="alternate" hreflang="de" href="https://www.baeckerei-alpascha.ch/de/">
+  <link rel="alternate" hreflang="ar" href="https://www.baeckerei-alpascha.ch/ar/">
+  <link rel="alternate" hreflang="x-default" href="https://www.baeckerei-alpascha.ch/de/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    /* Sprachwahl: Arabisch für arabische Browser, sonst Deutsch. Auf dem Server besser als 302-Weiterleitung lösen. */
+    (function () {
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || "de";
+      location.replace(/^ar\b/i.test(l) ? "ar/" : "de/");
+    })();
+  </script>
+  <meta http-equiv="refresh" content="1; url=de/">
+  <style>body{font-family:system-ui,sans-serif;background:#fbf6ee;color:#2b1d14;display:grid;place-content:center;min-height:100vh;margin:0;gap:1rem;text-align:center}a{color:#22533d;font-size:1.25rem}</style>
+</head>
+<body>
+  <p><a href="de/">Deutsch</a> &nbsp;|&nbsp; <a href="ar/" lang="ar">العربية</a></p>
+</body>
+</html>

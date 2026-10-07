@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.baeckerei-alpascha.ch/de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.baeckerei-alpascha.ch/de/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.baeckerei-alpascha.ch/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.baeckerei-alpascha.ch/de/"/>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.baeckerei-alpascha.ch/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.baeckerei-alpascha.ch/de/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.baeckerei-alpascha.ch/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.baeckerei-alpascha.ch/de/"/>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.baeckerei-alpascha.ch/de/impressum.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.baeckerei-alpascha.ch/de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.baeckerei-alpascha.ch/ar/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.baeckerei-alpascha.ch/de/impressum.html"/>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.baeckerei-alpascha.ch/ar/impressum.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.baeckerei-alpascha.ch/de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.baeckerei-alpascha.ch/ar/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.baeckerei-alpascha.ch/de/impressum.html"/>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.baeckerei-alpascha.ch/de/datenschutz.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.baeckerei-alpascha.ch/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.baeckerei-alpascha.ch/ar/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.baeckerei-alpascha.ch/de/datenschutz.html"/>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.baeckerei-alpascha.ch/ar/datenschutz.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.baeckerei-alpascha.ch/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.baeckerei-alpascha.ch/ar/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.baeckerei-alpascha.ch/de/datenschutz.html"/>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+</urlset>
