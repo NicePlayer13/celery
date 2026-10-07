@@ -21,7 +21,7 @@ What do they have? How do I start?* Every layout decision serves those three que
 
 ### Visual language: «Ofenwarm»
 The idea: the site should feel like standing in front of the oven, warm, tactile and alive, not like a template.
-- **Colours:** a deep oven brown (`#1C120B`) for the hero, the B2B section and the footer. Flour/wheat tones (`#F6EEE1`) for reading sections. Crust gold (`#D9A15E`) for light and highlights. **One** fresh herb green (`#2D6A4F`) is used only for actions, so every green element is something to click.
+- **Colours:** taken from the bakery's own logo. Their red (`#E52325`, slightly darkened to `#C81E22` on buttons so white text passes WCAG AA) is the **one** action colour, so every red element is something to click. The logo's wheat gold matches the crust gold (`#D9A15E`) used for light and highlights. A deep oven brown (`#1C120B`) is used for the hero, the B2B section and the footer, and flour/wheat tones (`#F6EEE1`) for reading sections.
 - **Type:** *Fraunces*, a warm, slightly quirky serif, for German headlines, with one word per headline set in italic gold. *Reem Kufi*, a Kufi display face, for Arabic headlines. *Readex Pro* for all body text in both scripts. All three are self-hosted.
 - **Texture instead of clip art:** the bread, food and oven illustrations are drawn with SVG lighting filters (real surface texture, blisters, flour). Paper grain covers the whole page, and section edges are cut in a wavy "crust" shape. Photo spots without an illustration show an honest "Foto folgt" frame.
 - **Motion** (all disabled when the device asks for reduced motion):
@@ -68,7 +68,7 @@ The idea: the site should feel like standing in front of the oven, warm, tactile
 8. Backstube & Ofen in Betrieb
 9. Lieferwagen (mit Beschriftung, falls vorhanden)
 10. Team (oder einzelne Mitarbeitende bei der Arbeit, nur mit deren Einverständnis)
-11. Haben Sie Ihr **Logo als Vektordatei** (SVG/AI/PDF)? *Im Konzept steht ein neutraler Entwurf.*
+11. Haben Sie Ihr **Logo als Vektordatei** (SVG/AI/PDF)? *Im Konzept ist das Logo von der bisherigen Website eingebaut (JPG, 500 px) – als Vektor wird es überall gestochen scharf.*
 12. Ein Bild für Social Media / Link-Vorschau (wird aus den Fotos oben erstellt)
 
 ### B. Lieferung & Konditionen

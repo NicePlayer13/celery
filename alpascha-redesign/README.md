@@ -50,10 +50,11 @@ Alles in `assets/js/site-config.js`:
 
 ## Logo & Intro
 
-- Das Logo liegt an **einer** Stelle: `assets/img/logo.svg` (Header, Footer, Intro, Favicon-Vorlage).
-  Im Konzept ist dort ein neutraler Entwurf. Das echte Logo einfach unter diesem Namen ablegen (SVG bevorzugt,
-  PNG geht auch – dann die Endung in den HTML-Dateien anpassen).
-- Enthält das echte Logo bereits den Schriftzug «alpascha», im Intro die Zeile `<p class="intro__name">` entfernen.
+- Das Logo der Bäckerei (roter Schriftzug mit Weizenähre) liegt freigestellt unter `assets/img/logo.webp`
+  (+ `logo.png` als Reserve). Es wird im Header, im Footer und im Intro verwendet.
+  Das Browser-Icon (`favicon-64.png`, `apple-touch-icon.png`) ist das rote «a» aus dem Logo.
+- Die Vorlage war ein JPG mit 500 px Breite. **Für den Livegang das Logo als Vektor (SVG/AI/PDF) anfordern**,
+  dann ist es auf hochauflösenden Bildschirmen gestochen scharf.
 - Das Intro läuft **einmal pro Browser-Sitzung** (ca. 3 s, Klick oder Taste überspringt), nie bei «Bewegung reduzieren».
   Für Präsentationen mit `?intro=1` erzwingen, z. B. `/de/?intro=1`.
 
